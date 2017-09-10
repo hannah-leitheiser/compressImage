@@ -1,7 +1,8 @@
-# Name of file: rle2image.py
+# Name of file: image2rle.py
 # Author:       Hannah Leitheiser
-# Date:         2017SEP10
-# Description of software: Converts an image to a made-up RLE (Run Length Encoding) file format.
+# Date:         2017SEP11
+# Description of software: Converts an image to a made-up file formate that compresses
+#	an image using Run Length Encoding.  All images will be converted to black and white.
 #	Ideally the .rle file will be converted back with rle2image.py.
 # Invokation example:
 #  python rle2image.py myimage.png myimage.rle
@@ -10,10 +11,24 @@ from PIL import Image
 import struct
 import argparse
 
+# ------------------------- parse command line arguments ----------------------------------
+# usage: rle2image.py [-h] filename output
+#
+# Compress an image with Run Length Encoding
+#
+# positional arguments:
+#  filename    image filename to compress
+#  output      filename of output
+#
+# optional arguments:
+#   -h, --help  show this help message and exit
+
 parser = argparse.ArgumentParser(description='Compress an imageage with Run Length Encoding')
-parser.add_argument('filename', help='imageage filename to compress')
+parser.add_argument('filename', help='image filename to compress')
 parser.add_argument('output', help='filename of output', default="output.rle")
 args = parser.parse_args()
+
+# ------------------------ open files / create header -------------------------------------
 
 image = Image.open(args.filename)
 pixels = image.load()
@@ -24,6 +39,8 @@ rleCompressedFile = open( args.output,'wb')
 
 rleCompressedFile.write( struct.pack('H', image.size[0]))
 rleCompressedFile.write( struct.pack('H', image.size[1]))
+
+# ------------------------------ compress image -------------------------------------------
 
 # Run Length Encoding: Scans the imageage, records the iterations of black or white
 # in bytes of the file.  Each consecutive byte represents the opposite color of the last.
