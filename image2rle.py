@@ -6,9 +6,9 @@
 # Invokation example:
 #  python rle2image.py myimage.png myimage.rle
 
-from PIL imageport Image
-imageport struct
-imageport argparse
+from PIL import Image
+import struct
+import argparse
 
 parser = argparse.ArgumentParser(description='Compress an imageage with Run Length Encoding')
 parser.add_argument('filename', help='imageage filename to compress')
@@ -39,7 +39,7 @@ for x in range(image.size[0]):
 				rleCompressedFile.write( struct.pack('B', 0));
 				count = 1
 		color = pixels[x,y]
-		if color[0] == 0 and color[1] == 0 and color[2]  == 0:
+		if (color[0] + color[1] + color[2]) // 3 < 128:
 			if black:
 				count = count + 1
 			else:
