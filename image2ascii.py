@@ -13,11 +13,10 @@
 
 import argparse
 
-
-#usage: python image2ascii.py [-h] [-i] [--fontsize FONTSIZE] filename output
-
-#Convert an image to ASCII
-
+# usage: python image2ascii.py [-h] [-i] [--fontsize FONTSIZE] filename output
+#
+# Convert an image to ASCII
+#
 # positional arguments:
 #   filename              image filename to convert
 #   output                output filename
