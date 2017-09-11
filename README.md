@@ -29,6 +29,6 @@ Python Scripts turn an image to a binary glyph file and back again.  There are 1
 
 Usage: 
 
-`python image2glyph.py myimage.png myimage.glyph
+`python image2glyph.py myimage.png myimage.glyph`
 
 `python glyph2image.py myimage.glyph output.png`
