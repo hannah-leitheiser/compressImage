@@ -15,10 +15,20 @@ Usage:
 
 ## ASCII Encoding
 ### image2ascii.py and ascii2image.py
-Python Scripts turna an image to (extended) ASCII art and back again.  Uses one byte for characters -- no unicode and prints some header information at the beginning so the file can be recreated. 
+Python Scripts turn an image to (extended) ASCII art and back again.  Uses one byte for characters -- no unicode and prints some header information at the beginning so the file can be recreated. 
 
 Usage: 
 
 `python image2rle.py myimage.png myimage.txt`
 
 `python rle2image.py myimage.txt output.png`
+
+## Glyph Encoding
+### image2glyph.py and glyph2image.py
+Python Scripts turn an image to a binary glyph file and back again.  There are 16 predefined black-and-white glyphs of 8x8 pixels in lengh, and the file encodes the best match for each block in the given image.  Lossy compression method.
+
+Usage: 
+
+`python image2glyph.py myimage.png myimage.glyph
+
+`python glyph2image.py myimage.glyph output.png`
