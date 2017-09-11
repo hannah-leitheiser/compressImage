@@ -9,6 +9,15 @@ Python Scripts to convert images in any format that can be read by Python Imagin
 
 Usage: 
 
-`python image2rle.py test.png test.rle`
+`python image2rle.py myimage.png myimage.rle`
 
-`python rle2image test.rle output.png`
+`python rle2image.py myimage.rle output.png`
+
+## ASCII Encoding
+### image2ascii.py and ascii2image.py
+Python Scripts turn an image to (extended) ASCII art and back again.  Uses one byte for characters -- no unicode and prints some header information at the beginning to the file can be recreated. 
+Usage: 
+
+`python image2rle.py myimage.png myimage.txt`
+
+`python rle2image.py myimage.rle output.png`
