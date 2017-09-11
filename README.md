@@ -8,4 +8,5 @@ Python Scripts to convert images in any format that can be read by Python Imagin
 
 Usage: 
 `python image2rle.py test.png test.rle`
+
 `python rle2image test.rle output.png`
