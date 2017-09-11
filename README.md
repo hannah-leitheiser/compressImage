@@ -16,6 +16,7 @@ Usage:
 ## ASCII Encoding
 ### image2ascii.py and ascii2image.py
 Python Scripts turna an image to (extended) ASCII art and back again.  Uses one byte for characters -- no unicode and prints some header information at the beginning so the file can be recreated. 
+
 Usage: 
 
 `python image2rle.py myimage.png myimage.txt`
