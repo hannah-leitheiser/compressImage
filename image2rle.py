@@ -1,6 +1,7 @@
-# Name of file: image2rle.py
-# Author:       Hannah Leitheiser
-# Date:         2017SEP11
+# Name of File  : image2rle.py
+# Type of File  : python 3.6 source file
+# Author        : Hannah Leitheiser
+# Date          : 2017SEP11
 # Description of software: Converts an image to a made-up file formate that compresses
 #	an image using Run Length Encoding.  All images will be converted to black and white.
 #	Ideally the .rle file will be converted back with rle2image.py.
