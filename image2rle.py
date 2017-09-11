@@ -24,7 +24,7 @@ import argparse
 # optional arguments:
 #   -h, --help  show this help message and exit
 
-parser = argparse.ArgumentParser(description='Compress an imageage with Run Length Encoding')
+parser = argparse.ArgumentParser(description='Compress an image with Run Length Encoding')
 parser.add_argument('filename', help='image filename to compress')
 parser.add_argument('output', help='filename of output', default="output.rle")
 args = parser.parse_args()
@@ -43,7 +43,7 @@ rleCompressedFile.write( struct.pack('H', image.size[1]))
 
 # ------------------------------ compress image -------------------------------------------
 
-# Run Length Encoding: Scans the imageage, records the iterations of black or white
+# Run Length Encoding: Scans the image, records the iterations of black or white
 # in bytes of the file.  Each consecutive byte represents the opposite color of the last.
 
 black=True

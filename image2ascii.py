@@ -48,9 +48,9 @@ width, height = image.size
 
 outputFile.write("Rendering Data to convert back to image:\n")
 if args.invert:
-	outputFile.write(" Black on white background.\n")
+	outputFile.write(" White text on black background.\n")
 else:
-	outputFile.write(" White on black background.\n")
+	outputFile.write(" Black test on white background.\n")
 outputFile.write(" Image Size: " + str(width) + " " + str(height) + "\n")
 outputFile.write(" Font Size : " + str(fontSize) + "\n")
 

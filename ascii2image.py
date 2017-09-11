@@ -28,7 +28,7 @@ asciiFile = open( args.filename )
 
 asciiFile.readline()
 invert = False
-if asciiFile.readline()[1] == 'B':
+if asciiFile.readline()[1] == 'W':
 	invert = True
 widthandheight = asciiFile.readline()[13:-1].split(' ')
 width = int(widthandheight[0])
