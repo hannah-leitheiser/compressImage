@@ -6,10 +6,31 @@
 #  Turns an image into ASCII art.
 #  requires python3 and PIL, and UbuntuMono-R.ttf 
 #  (you will have to change the font for different operating systems.)
+#  Warning: Program uses a brute force method and can be very slow.  
+#  In the future it would be better to create and retain the image glyphs, 
+#  generate some rules to keep from having to try every possibility, 
+#  and perhaps avoid PIL for reading the glyhps.
 
 import argparse
 
-parser = argparse.ArgumentParser(description='Convert an image to ASCII')
+
+#usage: python image2ascii.py [-h] [-i] [--fontsize FONTSIZE] filename output
+
+#Convert an image to ASCII
+
+# positional arguments:
+#   filename              image filename to convert
+#   output                output filename
+#
+# optional arguments:
+#   -h, --help            show this help message and exit
+#   -i, --invert          create text for white text on a black background
+#   --fontsize FONTSIZE, -f FONTSIZE
+#                         Point Size of Font - the larger the fontsize, the
+#                         smaller the ASCII output
+
+
+parser = argparse.ArgumentParser(description='Convert an image to ASCII', prog="python image2ascii.py")
 parser.add_argument('filename', help='image filename to convert')
 parser.add_argument('output',help='output filename')
 parser.add_argument('-i', "--invert", dest='invert',

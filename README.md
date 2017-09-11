@@ -20,4 +20,4 @@ Usage:
 
 `python image2rle.py myimage.png myimage.txt`
 
-`python rle2image.py myimage.rle output.png`
+`python rle2image.py myimage.txt output.png`
