@@ -16,12 +16,9 @@ Usage:
 `python rle2image.py images/aceofclubs.rle aceofclubs_rle.png`
 
 | File                   | Size   | Percent  |
-| ---------------------- | ------ | -------- |
+| ---------------------- | -----: | -------: |
 | aceofclubs.bmp (1-bit) | 27500  | 100%     |
 | aceofclubs.rle         |  2568  |   9%     |
-
-Size aceofclubs.bmp as a 1-bit bitmap: 27500
-Sie of sceofclubs.rle:
 
 aceofclubs_rle.png
 
