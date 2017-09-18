@@ -40,6 +40,11 @@ Python Scripts turn an image to a binary glyph file and back again.  There are 1
 
 Usage: 
 
-`python image2glyph.py myimage.png myimage.glyph`
+`python image2glyph.py images/aceofclubs.bmp images/aceofclubs.glyph`
 
-`python glyph2image.py myimage.glyph output.png`
+`python glyph2image.py images/aceofclubs.glyph images/aceofclubs_glyph.png`
+
+aceofclubs_glyph.png
+
+![Image of the Ace of Clubs after Glyph Compression](https://github.com/hannah-leitheiser/compressImage/blob/master/images/aceofclubs_glyph.png)
+

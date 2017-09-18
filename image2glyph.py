@@ -8,7 +8,7 @@ import argparse
 import struct
 from PIL import Image
 
-parser = argparse.ArgumentParser(description='Convert an image to ASCII', prog="python image2ascii.py")
+parser = argparse.ArgumentParser(description='Convert an image to Glyph', prog="python image2ascii.py")
 parser.add_argument('filename', help='image filename to convert')
 parser.add_argument('output',help='output filename')
 
@@ -90,8 +90,9 @@ glyphs = [ ( "00000000",
 
 outputFile = open( args.output, 'wb')
 
-image = Image.open(imageFileName)
+image = Image.open( args.filename )
 width, height = image.size
+pixelsImage = image.load()
 
 # Write the size of the image
 
@@ -114,18 +115,22 @@ for y in range(height//8):
 				deviationSum=0
 				for blockx in range(8):
 					for blocky in range(8):
+
+						pixel = pixelsImage[x*8 + blockx,y * 8 + blocky] 
+					
+						# if the image is RGB, average the channels
+						if type( pixel ) == type(int()):
+							color = pixel
+						else:
+							color = (pixel[0] + pixel[1] + pixel[2]) // 3 
+
+
 						if invert == 0:
 							deviationSum += ( int(glyphs[glyph][blockx][blocky]) * 255 -          
-                                               (pixelsImage[x*8 + blockx,y * 8 + blocky][0] +
-                                                pixelsImage[x*8 + blockx,y * 8 + blocky][1] + 
-                                                pixelsImage[x*8 + blockx,y * 8 + blocky][2])                                                
-                                                   )**2
+                                               color)**2
 						else:
 							deviationSum += ( (1-int(glyphs[glyph][blockx][blocky])) * 255 -          
-                                               (pixelsImage[x*8 + blockx,y * 8 + blocky][0] +
-                                                pixelsImage[x*8 + blockx,y * 8 + blocky][1] + 
-                                                pixelsImage[x*8 + blockx,y * 8 + blocky][2])                                                
-                                                   )**2
+                                               color )**2
 				if deviationSum < deviationMin:
 					newChar=glyph+(invert*8)
 					deviationMin = deviationSum;
