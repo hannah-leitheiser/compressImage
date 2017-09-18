@@ -9,9 +9,9 @@ Python Scripts to convert images in any format that can be read by Python Imagin
 
 Usage: 
 
-`python image2rle.py myimage.png myimage.rle`
+`python image2rle.py images/aceofclubs.bmp images/aceofclubs.rle`
 
-`python rle2image.py myimage.rle output.png`
+`python rle2image.py images/aceofclubs.rle aceofclubs_rle.bmp`
 
 ## ASCII Encoding
 ### image2ascii.py and ascii2image.py
