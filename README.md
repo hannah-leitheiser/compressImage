@@ -23,7 +23,9 @@ Python Scripts turn an image to (extended) ASCII art and back again.  Uses one b
 
 Usage: 
 
-`python image2rle.py images/aceofclubs.bmp images/aceofclubs_ascii.txt`
+Using font size 12.
+
+`python image2ascii.py -f 12 images/aceofclubs.bmp images/aceofclubs_ascii.txt`
 
 `python rle2image.py images/aceofclubs_ascii.txt images/aceofclubs_ascii.png`
 
