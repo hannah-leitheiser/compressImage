@@ -70,7 +70,7 @@ outputFile.write("Rendering Data to convert back to image:\n")
 if args.invert:
 	outputFile.write(" White text on black background.\n")
 else:
-	outputFile.write(" Black test on white background.\n")
+	outputFile.write(" Black text on white background.\n")
 outputFile.write(" Image Size: " + str(width) + " " + str(height) + "\n")
 outputFile.write(" Font Size : " + str(fontSize) + "\n")
 
@@ -78,33 +78,40 @@ pixelsImage = image.load()
 
 
 for y in range(height//fontSize):
-   asciiLine = ''
-   for x in range(width//(fontSize//2)):
-      deviationMin=1e308
-      newChar= ''
-      for char in printables:
-         # Use a small image the size of a character.  Draw the character to the image and compare 
-         # that to the associated part of the main image.  Compute the sum of the square deviation
-         # and find the character for which that sum is minimum.
-         txtBlockImage = Image.new( 'RGB', (fontSize//2,fontSize), textBackgroundColor)
-         draw = ImageDraw.Draw(txtBlockImage)
-         font = ImageFont.truetype("UbuntuMono-R.ttf", fontSize)
-         draw.text((0, 0), char,textColor,font=font)
-         pixelsTxt = txtBlockImage.load()
-         deviationSum=0
-         for blockx in range(fontSize//2):
-            for blocky in range(fontSize):
-               deviationSum += ( (pixelsTxt[blockx, blocky][0] +
+	asciiLine = ''
+	for x in range(width//(fontSize//2)):
+		deviationMin=1e308
+		newChar= ''
+		for char in printables:
+			# Use a small image the size of a character.  Draw the character to the image and compare 
+			# that to the associated part of the main image.  Compute the sum of the square deviation
+			# and find the character for which that sum is minimum.
+			txtBlockImage = Image.new( 'RGB', (fontSize//2,fontSize), textBackgroundColor)
+			draw = ImageDraw.Draw(txtBlockImage)
+			font = ImageFont.truetype("UbuntuMono-R.ttf", fontSize)
+			draw.text((0, 0), char,textColor,font=font)
+			pixelsTxt = txtBlockImage.load()
+			deviationSum=0
+			for blockx in range(fontSize//2):
+				for blocky in range(fontSize):
+					pixel = pixelsImage[x*(fontSize//2) + blockx,y * fontSize + blocky] 
+					
+					# if the image is RGB, average the channels
+					if type( pixel ) == type(int()):
+						color = pixel
+					else:
+						color = (pixel[0] + pixel[1] + pixel[2]) // 3 
+				
+					deviationSum += ( ((pixelsTxt[blockx, blocky][0] +
                                                 pixelsTxt[blockx, blocky][1] +
-                                                pixelsTxt[blockx, blocky][2]) -          
-                                               (pixelsImage[x*(fontSize//2) + blockx,y * fontSize + blocky][0] +
-                                                pixelsImage[x*(fontSize//2) + blockx,y * fontSize + blocky][1] + 
-                                                pixelsImage[x*(fontSize//2) + blockx,y * fontSize + blocky][2])                                                
+                                                pixelsTxt[blockx, blocky][2])//3) -          
+                                               (color)                                                
                                                    )**2
-         if deviationSum < deviationMin:
-            newChar=char
-            deviationMin = deviationSum;
-      asciiLine = asciiLine + newChar
-   outputFile.write(asciiLine + '\n');
+			if deviationSum < deviationMin:
+				newChar=char
+				deviationMin = deviationSum;
+		asciiLine = asciiLine + newChar
+	print(asciiLine)
+	outputFile.write(asciiLine + '\n');
 
 outputFile.close()

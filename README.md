@@ -13,7 +13,7 @@ Usage:
 
 `python rle2image.py images/aceofclubs.rle aceofclubs_rle.png`
 
-aceofblucs.rle.png
+aceofclubs_rle.png
 
 ![Image of the Ace of Clubs after RLE Compression](https://github.com/hannah-leitheiser/compressImage/blob/master/images/aceofclubs_rle.png)
 
@@ -23,9 +23,14 @@ Python Scripts turn an image to (extended) ASCII art and back again.  Uses one b
 
 Usage: 
 
-`python image2rle.py myimage.png myimage.txt`
+`python image2rle.py images/aceofclubs.bmp images/aceofclubs_ascii.txt`
 
-`python rle2image.py myimage.txt output.png`
+`python rle2image.py images/aceofclubs_ascii.txt images/aceofclubs_ascii.png`
+
+aceofclubs_ascii.png
+
+![Image of the Ace of Clubs after ASCII Compression](https://github.com/hannah-leitheiser/compressImage/blob/master/images/aceofclubs_ascii.png)
+
 
 ## Glyph Encoding
 ### image2glyph.py and glyph2image.py

@@ -47,5 +47,11 @@ else:
 txtImage = Image.new( 'RGB', (width,height), textBackgroundColor)
 draw = ImageDraw.Draw(txtImage)
 font = ImageFont.truetype("UbuntuMono-R.ttf", fontSize)
-draw.text((0, 0), asciiFile.read(),textColor,font=font)
+position = 0
+line = asciiFile.readline()
+while(line != ''):
+	draw.text( (0,(position*fontSize)), line,textColor,font=font)
+	position=position+1
+	line = asciiFile.readline()
+
 txtImage.save( args.output )
