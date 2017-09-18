@@ -3,7 +3,7 @@ Image Compression Programs
 
 This repository contains some examples of simple image compression ideas.  It is created as a programming exercise rather than an attempt to create any competitive image formats.
 
-# Black and White Images
+# Black and White Image Compression
 
 ## Run Length Encoding
 ### image2rle.py and rle2image.py
@@ -14,6 +14,14 @@ Usage:
 `python image2rle.py images/aceofclubs.bmp images/aceofclubs.rle`
 
 `python rle2image.py images/aceofclubs.rle aceofclubs_rle.png`
+
+| File                   | Size   | Percent  |
+| ---------------------- | ------ | -------- |
+| aceofclubs.bmp (1-bit) | 27500  | 100%     |
+| aceofclubs.rle         |  2568  |   9%     |
+
+Size aceofclubs.bmp as a 1-bit bitmap: 27500
+Sie of sceofclubs.rle:
 
 aceofclubs_rle.png
 
