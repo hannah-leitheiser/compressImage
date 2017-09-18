@@ -3,6 +3,8 @@ Image Compression Programs
 
 This repository contains some examples of simple image compression ideas.  It is created as a programming exercise rather than an attempt to create any competitive image formats.
 
+#Black and White Images
+
 ## Run Length Encoding
 ### image2rle.py and rle2image.py
 Python Scripts to convert images in any format that can be read by Python Imaging Library (PIL) (JPG, PNG, BMP) into a run length encoded file.  Images will be converted to 1-bit monochrome during encoding.  Two two-byte unsigned integers represent the width and height of the image in pixels, the remainder of the file is run lengths in byte-sized unsigned integers.
@@ -27,7 +29,7 @@ Using font size 12.
 
 `python image2ascii.py -f 12 images/aceofclubs.bmp images/aceofclubs_ascii.txt`
 
-`python rle2image.py images/aceofclubs_ascii.txt images/aceofclubs_ascii.png`
+`python ascii2image.py images/aceofclubs_ascii.txt images/aceofclubs_ascii.png`
 
 aceofclubs_ascii.png
 
