@@ -36,6 +36,11 @@ Using font size 12.
 
 `python ascii2image.py images/aceofclubs_ascii.txt images/aceofclubs_ascii.png`
 
+| File                   | Size   | Percent  |
+| ---------------------- | -----: | -------: |
+| aceofclubs.bmp (1-bit) | 27500  | 100%     |
+| aceofclubs_ascii.txt   |  3322  |   12%    |
+
 aceofclubs_ascii.png
 
 ![Image of the Ace of Clubs after ASCII Compression](https://github.com/hannah-leitheiser/compressImage/blob/master/images/aceofclubs_ascii.png)
@@ -50,6 +55,11 @@ Usage:
 `python image2glyph.py images/aceofclubs.bmp images/aceofclubs.glyph`
 
 `python glyph2image.py images/aceofclubs.glyph images/aceofclubs_glyph.png`
+
+| File                   | Size   | Percent  |
+| ---------------------- | -----: | -------: |
+| aceofclubs.bmp (1-bit) | 27500  | 100%     |
+| aceofclubs.glyph       |  1704  |   6%    |
 
 aceofclubs_glyph.png
 
