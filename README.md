@@ -3,7 +3,7 @@ Image Compression Programs
 
 This repository contains some examples of simple image compression ideas.  It is created as a programming exercise rather than an attempt to create any competitive image formats.
 
-#Black and White Images
+# Black and White Images
 
 ## Run Length Encoding
 ### image2rle.py and rle2image.py
