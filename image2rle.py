@@ -56,8 +56,14 @@ for x in range(image.size[0]):
 				rleCompressedFile.write( struct.pack('B', 255));
 				rleCompressedFile.write( struct.pack('B', 0));
 				count = 1
-		color = pixels[x,y]
-		if (color[0] + color[1] + color[2]) // 3 < 128:
+
+		# if the image is RGB, average the channels
+		if type(pixels[x,y]) == type(int()):
+			color = pixels[x,y]
+		else:
+			color = (pixels[x,y][0] + pixels[x,y][1] + pixels[x,y][2]) // 3 
+
+		if color < 128:
 			if black:
 				count = count + 1
 			else:
