@@ -11,7 +11,11 @@ Usage:
 
 `python image2rle.py images/aceofclubs.bmp images/aceofclubs.rle`
 
-`python rle2image.py images/aceofclubs.rle aceofclubs_rle.bmp`
+`python rle2image.py images/aceofclubs.rle aceofclubs_rle.png`
+
+aceofblucs.rle.png
+
+![Image of the Ace of Clubs after RLE Compression](https://github.com/hannah-leitheiser/compressImage/blob/master/images/aceofclubs_rle.png)
 
 ## ASCII Encoding
 ### image2ascii.py and ascii2image.py
